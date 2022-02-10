@@ -6,12 +6,16 @@ const fail = () => {
 };
 
 describe('v1', () => {
+  beforeEach(() => {
+    todos = ['item1', 'item2', 'item3'];
+  });
+
   it('should have a place to store todos', () => {
     expect(todos).to.be.a('array');
   });
 
   it('it should have a way to display todos', () => {
-    // console.log output not testable in browser without mocks
+    // console.log output not realistically testable in browser
   });
 
   it('it should have a way to add a todo', () => {
@@ -25,28 +29,28 @@ describe('v1', () => {
   });
 
   it('it should have a way to remove a todo', () => {
-    expect(todos.length).to.equal(4);
-    todos.splice(3, 1);
-    expect(todos.length).to.equal(3);
+    todos.splice(2, 1);
+    expect(todos.length).to.equal(2);
   });
 });
 
 describe('v2', () => {
+  beforeEach(() => {
+    todos = ['item1', 'item2', 'item3'];
+  });
+
   it('should have a function to add a todo', () => {
-    expect(todos.length).to.equal(3);
     addTodo('item4');
     expect(todos.length).to.equal(4);
   });
 
   it('should have a function to edit a todo', () => {
-    expect(todos).to.eql(['item1 updated', 'item2', 'item3', 'item4']);
     editTodo(0, 'item1 edited');
-    expect(todos).to.eql(['item1 edited', 'item2', 'item3', 'item4']);
+    expect(todos).to.eql(['item1 edited', 'item2', 'item3']);
   });
 
   it('should have a function to remove a todo', () => {
-    expect(todos).to.eql(['item1 edited', 'item2', 'item3', 'item4']);
-    removeTodo(3);
-    expect(todos).to.eql(['item1 edited', 'item2', 'item3']);
+    removeTodo(2);
+    expect(todos).to.eql(['item1', 'item2']);
   });
 });
