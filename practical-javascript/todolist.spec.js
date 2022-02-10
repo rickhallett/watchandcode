@@ -15,13 +15,13 @@ describe('v1', () => {
   });
 
   it('it should have a way to add a todo', () => {
-    todos.push('item 4');
+    todos.push('item4');
     expect(todos.length).to.equal(4);
   });
 
   it('it should have a way to edit a todo', () => {
-    todos[0] = 'item 1 updated';
-    expect(todos[0]).to.equal('item 1 updated');
+    todos[0] = 'item1 updated';
+    expect(todos[0]).to.equal('item1 updated');
   });
 
   it('it should have a way to remove a todo', () => {
@@ -39,10 +39,8 @@ describe('v2', () => {
   });
 
   it('should have a function to edit a todo', () => {
-    expect(todos).to.equal(['item 1 updated', 'item2', 'item3', 'item4']);
-  });
-
-  it('should have a function to remove a todo', () => {
-    fail();
+    expect(todos).to.eql(['item1 updated', 'item2', 'item3', 'item4']);
+    editTodo(0, 'item1 edited');
+    expect(todos).to.eql(['item1 edited', 'item2', 'item3', 'item4']);
   });
 });

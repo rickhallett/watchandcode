@@ -4,11 +4,11 @@
  * ======
  */
 
-var todos = ['item 1', 'item 2', 'item 3'];
+var todos = ['item1', 'item2', 'item3'];
 
 todos.push('item 4');
 
-todos[0] = 'item 1 updated';
+todos[0] = 'item1 updated';
 
 todos.splice(3, 1);
 
@@ -23,4 +23,8 @@ console.clear();
 
 function addTodo(todo) {
   todos.push(todo);
+}
+
+function editTodo(position, newTodo) {
+  todos[position] = newTodo;
 }
