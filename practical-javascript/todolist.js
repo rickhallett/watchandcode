@@ -23,12 +23,15 @@ console.clear();
 
 function addTodo(todo) {
   todos.push(todo);
+  console.log(todos);
 }
 
 function editTodo(position, newTodo) {
   todos[position] = newTodo;
+  console.log(todos);
 }
 
 function removeTodo(position) {
   todos.splice(position, 1);
+  console.log(todos);
 }
