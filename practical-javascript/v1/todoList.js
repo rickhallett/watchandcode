@@ -4,4 +4,6 @@ todos.push("item 4");
 
 todos[0] = "item 1 updated";
 
+todos.splice(3, 1);
+
 console.log(todos);
