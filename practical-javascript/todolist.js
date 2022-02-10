@@ -28,3 +28,7 @@ function addTodo(todo) {
 function editTodo(position, newTodo) {
   todos[position] = newTodo;
 }
+
+function removeTodo(position) {
+  todos.splice(position, 1);
+}

@@ -43,4 +43,10 @@ describe('v2', () => {
     editTodo(0, 'item1 edited');
     expect(todos).to.eql(['item1 edited', 'item2', 'item3', 'item4']);
   });
+
+  it('should have a function to remove a todo', () => {
+    expect(todos).to.eql(['item1 edited', 'item2', 'item3', 'item4']);
+    removeTodo(3);
+    expect(todos).to.eql(['item1 edited', 'item2', 'item3']);
+  });
 });
